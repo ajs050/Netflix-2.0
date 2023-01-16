@@ -1,13 +1,20 @@
-import './App.css';
+import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './components/Nav';
+import Home from './pages/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>hey</h1>
-      <FontAwesomeIcon icon="bars"/>
-    </div>
+    <>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
